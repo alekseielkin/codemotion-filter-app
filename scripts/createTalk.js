@@ -1,6 +1,6 @@
 import { createEl, showDay, showTime } from "./util.js"
 
-
+// TODO: add stage
 const createTalk = (talk) => {
   const card = createEl('article', 'card')
   card.classList.add('text-center', 'col')

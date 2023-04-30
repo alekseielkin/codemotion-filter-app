@@ -19,7 +19,7 @@ btnGroupsContainer.appendChild(createDateBtnsGroup(times, 'times', showTime));
 
 
 // TAGS
-
+// TODO: separate languages and level for other sets of buttons
 const tags = new Set();
 agenda.forEach(talk => {
   talk.agendaInfo.tags.split(",").forEach(tag => tags.add(tag))
@@ -53,16 +53,6 @@ filterForm.addEventListener('submit', (event) => {
   console.log(talks);
   const fragment = document.createDocumentFragment();
   talks.forEach(talk => {
-    // const talkElement = document.createElement('div');
-    // talkElement.classList.add('talk');
-    // talkElement.innerHTML = `
-    //   <h3>${talk.agendaInfo.name}</h3>
-    //   <p>${talk.agendaInfo.description}</p>
-    //   <p>tags: ${talk.agendaInfo.tags}</p>
-    //   <p>${showDay(talk.agendaInfo.agenda_date)}</p>
-    //   <p>${showTime(talk.agendaInfo.start_time_milli)}</p>
-    //   <p>${talk.speakers.map(speaker => speaker.name)}</p>
-    // `;
     const talkElement = createTalk(talk);
     fragment.appendChild(talkElement)
   });
