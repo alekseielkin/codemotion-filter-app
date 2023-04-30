@@ -37,7 +37,7 @@ const createRadioBtn = (name, value, text) => {
   return pare;
 }
 
-// dtae and time:
+// date and time:
 
 const showDay = (data) => {
   const date = new Date(data);
