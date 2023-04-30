@@ -2,6 +2,10 @@ const sortTalksByInfo = (talks, key, value) => {
   return talks.filter(talk => talk.agendaInfo[key] === value);
 }
 
+const sortTalksByTag = (talks, tag) => {
+  return talks.filter(talk => talk.agendaInfo.tags.includes(tag));
+}
+
 const createEl = ( tag, className, text ) => {
   const $element = document.createElement(tag)
   if (className) {
@@ -47,7 +51,8 @@ const showDay = (data) => {
   return formatter.format(date);
 }
 
-const showTime = (time) => {
+const showTime = (data) => {
+  const time = new Date(parseInt(data));
   const options = {
     timeZone: "Europe/Madrid",
     hour12: false,
@@ -60,4 +65,4 @@ const showTime = (time) => {
 }
 
 
-export { sortTalksByInfo, createEl, createRadioBtn, showDay, showTime }
+export { sortTalksByInfo, sortTalksByTag, createEl, createRadioBtn, showDay, showTime }
